@@ -1,0 +1,55 @@
+@mixin styleText($color,$fs,$fw){
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+@mixin styleTextSpacing($color,$fs,$ls){
+  color: $color;
+  font-size: $fs;
+  letter-spacing: $ls;
+}
+@mixin styleTextHeight($color,$fs,$lh) {
+  color: $color;
+  font-size: $fs;
+  line-height: $lh;
+}
+@mixin styleTextIcon($color,$fs,$lh){
+  color: $color;
+  font-size: $fs;
+  line-height: $lh;
+}
+@mixin styleTextWithoutColor($fs,$fw,$ls,$lh){
+  font-size: $fs;
+  font-weight: $fw;
+  letter-spacing: $ls;
+  line-height: $lh;
+}
+@mixin borderIcon($w,$h,$lh,$fs,$bd-ra){
+  width: $w;
+  height: $h;
+  line-height: $lh;
+  font-size: $fs;
+  border-radius: $bd-ra;
+}
+@mixin responsiveMax($screen){
+  @if map-has-key($map: $breakpointsMax,$key: $screen){
+    $value:map-get($map: $breakpointsMax,$key: $screen);
+    @media screen and (max-width: $value){
+      @content;
+    }
+  }
+  @else{
+    @warn "`{$screen}` isn't valid";
+  }
+}
+@mixin responsiveMin($screen){
+  @if map-has-key($map: $breakpointsMin,$key: $screen){
+    $value:map-get($map: $breakpointsMin,$key: $screen);
+    @media screen and (min-width: $value){
+      @content;
+    }
+  }
+  @else{
+    @warn "`{$screen}` isn't valid";
+  }
+}

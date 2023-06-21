@@ -1,0 +1,37 @@
+.massiveDesign{
+  .design__item{
+    border: 1px solid $color-white-border-0;
+    border-radius: $bd-ra-1;
+    position: relative;
+    padding: $pd-9;
+    margin-bottom: $mg-9 * 2;
+    .design__icon{
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      background-color: $color-black-bg-1;
+      border-radius: $bd-ra-1;
+      transition: all 0.5s;
+      box-shadow: 0 0 0 4px $color-white-text;
+      i{
+        @include styleTextIcon($color-white-text,$fs-icon-0,$lh-3)
+      }
+    }
+    h2{
+      text-transform: uppercase;
+      letter-spacing: $ls-0;
+      margin: $mg-10 0 $mg-8 0;
+    }
+    p{
+      color: $color-gray-text-0;
+    }
+    &:hover{
+      .design__icon{
+        background-color: $color-orange-text;
+      }
+    }
+  }
+}

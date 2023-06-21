@@ -1,0 +1,28 @@
+.massiveBackToTop{
+  .backToTop{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    @include borderIcon(40px,40px,42px,$fs-default,0);
+    background-color: $color-black-bg-4;
+    text-align: center;
+    color: $color-white-text;
+    transform: translateY(45px);
+    visibility: hidden;
+    opacity: 0;
+    &.cd-top--is-visible {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+    &:hover,&:focus{
+      color: $color-black-title;
+    }
+    &:hover{
+      background-color: $color-orange-text;
+    }
+  }
+  @media screen and (max-width: 800px){
+    display: none;
+  }
+}

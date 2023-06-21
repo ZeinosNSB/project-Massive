@@ -1,0 +1,24 @@
+.massiveNumber{
+  background-color: $color-black-bg-5;
+  .number__item{
+    text-align: center;
+    color: $color-white-text;
+    padding: 0;
+    span{
+      font-size: $fs-icon-1;
+      margin-right: $mg-4;
+    }
+    p{
+      display: inline-block;
+      font-size: $fs-icon-1;
+      letter-spacing: $ls-1;
+    }
+    h2{
+      @include styleTextSpacing($color-white-text,$fs-default,$ls-0);
+      margin-top: $mg-4;
+    }
+    @include responsiveMax('large'){
+      padding: $pd-9 0;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Source Sans 3', sans-serif;
+  @include styleText($color-black-default,$fs-default,$fw-default);
+  line-height: $lh-default;
+}
+
+$number: 1;
+@while $number <7 {
+  p,h#{$number} {
+    margin: 0;
+  }
+  $number: $number + 1;
+}
+
+h2{
+  @include styleText($color-black-default,$fs-title-2,$fw-default);
+  letter-spacing: $ls-1;
+  line-height: $lh-default;
+}
+
+::selection{
+  background-color: $color-orange-text;
+  color: white;
+}
+
+.section{
+  padding: $pd-number 0;
+  @include responsiveMax('medium'){
+    padding: $pd-section 0;
+  }
+}
+
+a{
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style: none;
+  }
+}
+
+button{
+  outline: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .d-mass-none{
+    display: none !important;
+  }
+}

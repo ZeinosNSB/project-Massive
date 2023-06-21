@@ -1,0 +1,126 @@
+header{
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  .massiveNavBar{
+    justify-content: space-between;
+    height: 100px;
+    background-color: transparent;
+    padding: 0 $pd-9;
+    transition: all 0.5s;
+    @include responsiveMax('large-special'){
+      height: 70px;
+      .navbar-brand{
+        img{
+          height: 100%;
+        }
+      }
+    }
+    .navbar-brand{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      margin-right: 0;
+      img{
+        height: 96px;
+        display: inline-block;
+        transition: all 0.3s;
+        padding: $pd-0 0;
+        @media screen and (max-width: 840px){
+          height: 70px;
+        }
+      }
+    }
+    .navbar-collapse{
+      flex-grow: 0;
+      .nav-item,.nav-line{
+        margin-left: $mg-1;
+        .nav-link{
+          display: block;
+          @include styleText($color-white-text,$fs-text-0,$fw-default);
+          letter-spacing: $ls-0 / 2;
+          line-height: $lh-1 - 1;
+          padding: 0 $pd-4;
+          transition: all 0.5s;
+          white-space: nowrap;
+          &:is(:hover,:focus),&.active{
+            color: $color-orange-text;
+          }
+          i{
+            font-size: $fs-text-3;
+            margin-right: $mg-2;
+          }
+          span{
+            margin-left: $mg-1 + 1;
+            padding: 0;
+          }
+          @include responsiveMax('large'){
+            padding:0 0 0 $pd-7;
+          }
+          @media screen and (min-width: 768px) and (max-width: 820px){
+            font-size: $fs-text-0 - 1.5;
+          }
+        }
+      }
+      .nav-line{
+        display: none;
+        font-size: $fs-text-0;
+        color: $color-white-text;
+        margin:0 $mg-1;
+        span{
+          @include responsiveMin('medium'){
+            line-height: $lh-1 - 4;
+            padding:0 0 0 $pd-7;
+          }
+        }
+      }
+      @include responsiveMax('medium'){
+        background-color: $color-white-text;
+        border: 1px solid $color-white-bg-5;
+        border-top: none;
+        .nav-item{
+          .nav-link{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include styleTextSpacing($color-black-title,$fs-text-0,calc($ls-0 / 2));
+            border-top: 1px solid $color-white-bg-5;
+            padding-left: $pd-7;
+            padding-right: 0;
+            span{
+              border-left: 1px solid $color-white-bg-3;
+              text-align: center;
+              font-size: $fs-title-1 + 2;
+              padding: $pd-1 + 0.5 $pd-8;
+              line-height: $lh-1 - 1;
+            }
+          }
+        }
+      }
+    }
+    .navbar-toggler{
+      padding: $pd-3 + 0.5 0;
+      border: none;
+      &:focus{
+        box-shadow: none;
+      }
+      #navbar-toggler-icon{
+        font-size: $fs-title-2 - 1;
+        color: $color-white-text;
+      }
+    }
+    &.resize-header{
+      background-color: $color-black-bg-0;
+      height: 60px;
+      width: 100%;
+      .navbar-brand{
+        height: 100%;
+        img{
+          height: 100%;
+        }
+      }
+    }
+  }
+}

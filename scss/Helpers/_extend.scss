@@ -1,0 +1,22 @@
+%background-image{
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+  background-attachment: fixed!important;
+  background-size: cover!important;
+}
+%hover-image{
+  position: absolute;
+  inset: 0;
+  border: 20px solid $color-black-bg-2;
+  background-color: $color-white-bg-0;
+  text-align: center;
+}
+%button{
+  border: 1px solid transparent;
+  border-radius: 0;
+  outline: none;
+  @include styleTextWithoutColor($fs-text-2,$fw-default,$ls-0,$lh-button);
+  color: $color-white-text;
+  padding: $pd-5 $pd-9;
+  transition: all 0.5s;
+}

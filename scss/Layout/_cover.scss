@@ -1,0 +1,28 @@
+.massiveCover{
+  background-image: url("../../img/cover.jpeg");
+  @extend %background-image;
+  .cover__content{
+    text-align: center;
+    .cover__text{
+      padding-bottom: $pd-section;
+      span{
+        @include styleTextSpacing($color-orange-text,$fs-text-4,$ls-2);
+      }
+      h1{
+        @include styleTextWithoutColor($fs-title-4 + 1,$fw-default,$ls-1,$lh-default);
+        color: $color-white-text;
+        @include responsiveMax('large'){
+          font-size: $fs-title-2 + 2;
+        }
+      }
+    }
+    .cover__button{
+      @include responsiveMax('large'){
+        button{
+          margin-bottom: $mg-2;
+          font-size: $fs-text-3;
+        }
+      }
+    }
+  }
+}

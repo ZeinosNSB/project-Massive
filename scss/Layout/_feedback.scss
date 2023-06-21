@@ -1,0 +1,36 @@
+.massiveFeedback{
+  border-bottom: 1px solid $color-white-bg-4;
+  .feedback__content{
+    width: 66.667%;
+    margin: 0 auto;
+    padding: 0 $pd-9;
+    .feedback__item{
+      text-align: center;
+      .feedback__thumb{
+        margin-bottom: $mg-8;
+        width: 100px;
+        display: inline-block;
+        img{
+          border-radius: 50%;
+        }
+      }
+      .feedback__comment{
+        font-style: italic;
+        @include styleTextHeight($color-gray-text-0,$fs-text-4,$lh-1);
+        margin-bottom: $mg-10;
+      }
+      .feedback__user{
+        margin-top: $mg-4;
+        p:first-child{
+          @include styleTextSpacing($color-black-bg-1,$fs-text-2,$ls-1)
+        }
+        p:last-child{
+          @include styleTextSpacing($color-gray-text-9,$fs-text-3,$ls-1)
+        }
+      }
+    }
+    @media screen and (max-width: 1215px){
+      width: 100%;
+    }
+  }
+}

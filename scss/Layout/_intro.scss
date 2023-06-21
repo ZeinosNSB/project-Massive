@@ -1,0 +1,79 @@
+.massiveIntro{
+  background-image: url("../../img/intro.png");
+  background-attachment: fixed;
+  .container{
+    padding: 0 $pd-9;
+    .row>*{
+      padding: 0;
+    }
+    #myTab{
+      justify-content: space-between;
+      .nav-item{
+        width: 18%;
+        .nav-link{
+          width: 100%;
+          position: relative;
+          border-radius: 0;
+          background-color: $color-gray-bg-1;
+          text-align: center;
+          color: $color-gray-text-4;
+          padding: $pd-9 + 5 $pd-11 + 5;
+          span{
+            font-size: $fs-icon-1;
+          }
+          &:hover,&.active{
+            background-color: $color-white-text;
+            color: $color-black-bg-1;
+            &::after{
+              content: "";
+              position: absolute;
+              bottom: -19px;
+              left: 50%;
+              transform: translateX(-50%);
+              border: 10px solid transparent;
+              border-top-color: $color-white-text;
+            }
+          }
+        }
+      }
+    }
+    #myTabContent{
+      .tab-pane{
+        padding: $pd-9 0;
+        .intro__title{
+          margin-bottom: $mg-9 * 2;
+          p{
+            @include styleTextSpacing($color-gray-text-0,$fs-text-2,$ls-1)
+          }
+          h2{
+            font-size: $fs-icon-0;
+            color: $color-black-title;
+          }
+        }
+        .intro__paragraph{
+          line-height: $lh-1;
+        }
+      }
+    }
+    @include responsiveMax('medium'){
+      #myTab{
+        .nav-item{
+          width: 100%;
+          margin-bottom: $mg-4;
+          .nav-link{
+            padding: $pd-9 + 5 $pd-11;
+          }
+        }
+      }
+      #myTabContent{
+        .tab-pane{
+          .intro__title{
+            h2{
+              font-size: $fs-title-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

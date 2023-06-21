@@ -1,0 +1,30 @@
+.massiveCarousel{
+  background-image: url("../../img/banner.jpeg");
+  height: 100vh;
+  @extend %background-image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .carousel__content{
+    text-transform: uppercase;
+    text-align: center;
+    h1{
+      @include styleText($color-white-text,$fs-title-0,$fw-title);
+      letter-spacing: $ls-3;
+    }
+    h2{
+      @include styleText($color-white-text,$fs-title-1,$fw-default);
+      letter-spacing: $ls-3 + 1;
+    }
+    @include responsiveMax('medium'){
+      h1{
+        font-size: $fs-icon-0;
+        letter-spacing: $ls-3;
+      }
+      h2{
+        font-size: $fs-text-4;
+      }
+    }
+  }
+}

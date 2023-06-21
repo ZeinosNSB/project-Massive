@@ -1,0 +1,84 @@
+footer{
+  .footer__top{
+    padding: $pd-10 0;
+    background-color: $color-black-bg-1;
+    .footer__item{
+      .footer__logo{
+        display: block;
+        margin-bottom: $mg-8;
+        img{
+          height: 100px;
+        }
+      }
+      .footer__desc{
+        color: $color-gray-text-0;
+        line-height: $lh-1;
+        margin-bottom: $mg-10;
+      }
+      h2{
+        @include styleTextSpacing($color-white-text,$fs-text-2,$ls-0);
+        margin-bottom: $mg-10;
+      }
+      ul.footer__list{
+        li{
+          border-bottom: 1px solid $color-black-title;
+          a{
+            line-height: $lh-4 - 1;
+            color: $color-gray-text-7;
+            &::before{
+              font-family: "fontawesome";
+              content: "\f105";
+              font-size: $fs-text-3;
+              padding-right: $pd-5;
+            }
+            &:hover{
+              color: $color-orange-text;
+            }
+          }
+        }
+        @include responsiveMax('large'){
+          margin-bottom: $mg-8 * 2;
+        }
+      }
+      .footer__img{
+        font-size: 0;
+        li{
+          display: inline-block;
+          a{
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            margin: 0 $mg-4 $mg-4 0;
+            img{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer__bottom{
+    background-color: $color-black-bg-5;
+    padding: $pd-9 + 5;
+    .footer__bottom-text{
+      color: $color-gray-text-8;
+      margin-top: $mg-4;
+    }
+    .footer__bottom-social{
+      text-align: end;
+      a{
+        margin-left: $mg-6;
+        display: inline-block;
+        text-align: center;
+        color: $color-gray-bg-3;
+        border: 1px solid $color-gray-bg-3;
+        @include borderIcon($fs-title-4,$fs-title-4,$lh-2,$fs-title-1,50%);
+        &:hover{
+          border-color: transparent;
+          background-color: $color-gray-bg-3;
+          color: $color-white-text;
+        }
+      }
+    }
+  }
+}

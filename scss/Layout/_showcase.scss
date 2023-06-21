@@ -1,0 +1,104 @@
+.massiveShowcase{
+  padding-bottom: 0;
+  .section-info{
+    margin: 0 0 $mg-13 0;
+  }
+  .showcase__filter{
+    text-align: center;
+    .filter-nav{
+      display: inline;
+      line-height: $lh-5;
+      .nav-item{
+        display: inline-block;
+        .nav-link{
+          @include styleTextSpacing($color-gray-text-2,$fs-text-2,$ls-2);
+          padding: 0;
+          margin: 0 $mg-6;
+          transition: all 0.5s;
+          cursor: pointer;
+          &:hover,&.active{
+            color: $color-black-bg-1;
+          }
+        }
+      }
+    }
+  }
+  .showcase__content{
+    margin-top: $mg-8 * 2;
+    position: relative;
+    width: 100%;
+    .showcase__item{
+      padding: 0;
+      .showcase__photo{
+        position: relative;
+        margin: 0;
+        img{
+          width: 100%;
+          @extend %background-image;
+        }
+        .showcase__info{
+          opacity: 0;
+          @extend %hover-image;
+          .showcase__button{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            font-size: $fs-icon-0 + 5;
+            transform: translateY(45%);
+            transition: all 0.5s;
+            a{
+              color: $color-black-bg-1;
+              transition: all 0.5s;
+              &:hover{
+                color: $color-orange-text;
+              }
+            }
+          }
+          .showcase__description{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transform: translateY(-55%);
+            transition: all 0.5s;
+            h4{
+              margin-bottom: $mg-2;
+              @include styleTextWithoutColor($fs-text-2,$fw-default,$ls-2 + 1,$lh-default);
+              a{
+                color: $color-black-bg-1;
+                transition: all 0.5s;
+                &:hover{
+                  color: $color-orange-text;
+                }
+              }
+            }
+            p{
+              @include styleTextWithoutColor($fs-text-3,$fw-title,$ls-2,$lh-1);
+              a{
+                color: $color-gray-text-3;
+                transition: all 0.5s;
+                &:hover{
+                  color: $color-orange-text;
+                }
+              }
+            }
+          }
+        }
+      }
+      &:hover{
+        .showcase__photo{
+          .showcase__info{
+            opacity: 1;
+            .showcase__button{
+              top: 40%;
+              margin-top: -55px;
+            }
+            .showcase__description{
+              bottom: 45%;
+              margin-bottom: -90px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

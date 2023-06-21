@@ -1,0 +1,17 @@
+.btn{
+  @extend %button
+}
+.button--black{
+  background-color: $color-black-bg-1;
+  &:hover{
+    background-color: $color-orange-text;
+    color: $color-white-text;
+  }
+}
+.button--orange{
+  background-color: $color-orange-text;;
+  &:hover{
+    background-color: $color-white-text;
+    color: $color-black-bg-1;
+  }
+}

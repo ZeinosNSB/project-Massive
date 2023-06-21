@@ -1,0 +1,41 @@
+.massiveSkill{
+  background: url("../../img/skills.jpeg");
+  @extend %background-image;
+  padding: 0;
+  .skillBg{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, transparent 50%, $color-black-bg-2 0%, $color-black-bg-2 50%);
+    padding: $pd-number;
+    @include responsiveMax('medium'){
+      background: transparent;
+      padding: $pd-section 0;
+    }
+    .skill__left{
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: $pd-9;
+      h2{
+        color: $color-white-text;
+        letter-spacing: $ls-3 + 1;
+        @include responsiveMax('medium'){
+          font-size: $fs-title-3;
+        }
+      }
+    }
+    .skill__right{
+      padding:0 $pd-9;
+      h2{
+        @include styleTextSpacing($color-white-text,$fs-title-3,$ls-1);
+        margin-bottom: $mg-10;
+      }
+      p{
+        color: $color-white-text;
+        line-height: $lh-1;
+        margin-bottom: $mg-10;
+      }
+    }
+  }
+}

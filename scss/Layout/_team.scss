@@ -1,0 +1,118 @@
+.massiveTeam{
+  .section-info{
+    margin:  0 0 $mg-13 0;
+  }
+  .team__content{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .team__item{
+      .team__photo{
+        position: relative;
+        img{
+          width: 100%;
+        }
+        .team__name{
+          position: absolute;
+          right: 0;
+          bottom: 8%;
+          width: 70%;
+          background-color: $color-black-bg-3;
+          text-align: end;
+          padding: $pd-3 $pd-7;
+          h3{
+            @include styleTextWithoutColor($fs-text-2,$fw-title,$ls-1,$lh-default);
+            color: $color-white-text;
+            margin-bottom: $mg-1;
+          }
+          p{
+            @include styleTextSpacing($color-white-bg-2,$fs-text-3,$ls-1);
+          }
+        }
+        .team__info{
+          position: absolute;
+          inset: 0;
+          text-align: center;
+          opacity: 0;
+          @extend %hover-image;
+          .team__title{
+            position: absolute;
+            top: 0;
+            transform: translateY(-55%);
+            padding: 0 $pd-7;
+            transition: all 0.5s;
+            h3{
+              @include styleTextSpacing($color-black-bg-1,$fs-text-2,$ls-2 + 1);
+              margin-bottom: $mg-9;
+            }
+            p{
+              @include styleTextHeight($color-gray-text-0,$fs-text-2,$lh-1)
+            }
+          }
+          .team__social{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            transform: translateY(45%);
+            transition: all 0.5s;
+            a{
+              font-size: $fs-text-4;
+              color: $color-black-bg-1;
+              margin: 0 $mg-4;
+              transition: all 0.5s;
+              &:hover{
+                color: $color-orange-text;
+              }
+            }
+          }
+        }
+        &:hover{
+          .team__info{
+            opacity: 1;
+            .team__title{
+              opacity: 1;
+              top: 35%;
+            }
+            .team__social{
+              opacity: 1;
+              bottom: 9%;
+            }
+          }
+        }
+      }
+    }
+    .team__promotion{
+      padding: 0 $pd-9;
+      .team__promotion-content{
+        background-color: $color-white-bg-3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $pd-11;
+        margin-top: $mg-11;
+        @include responsiveMax('large'){
+          display: inline-block;
+          .team__promotion-button{
+            margin-top: $mg-8;
+            button{
+              margin-bottom: $mg-2;
+              font-size: $fs-text-3;
+            }
+          }
+        }
+        h2{
+          font-size: $fs-title-3;
+          color: $color-black-title;
+          span{
+            color: $color-orange-text;
+          }
+        }
+        p{
+          color: $color-gray-text-0;
+          margin-top: $mg-4;
+        }
+      }
+    }
+  }
+}
